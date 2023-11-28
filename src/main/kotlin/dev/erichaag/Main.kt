@@ -25,7 +25,10 @@ fun main() {
             exclude(name = "spring-test-data-geode", reason = "project EOL")
         }
         organization("spring-cloud")
-        organization("apache")
+        organization("apache") {
+            exclude(name = "poi", "maintainers declined PR: https://github.com/apache/poi/pull/466")
+            exclude(name = "xmlbeans", "maintainers declined PR: https://github.com/apache/xmlbeans/pull/9")
+        }
     }
 
     printReport(client, report)
